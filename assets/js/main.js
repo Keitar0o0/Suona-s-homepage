@@ -159,7 +159,7 @@ const topInfo = document.getElementById('topInfo');
                     const weatherIcon = data.weather[0].icon; // 天气图标代码
                     const weatherInfoElement = document.getElementById('weather-info'); // 获取页面中用于显示天气信息的元素
                     // 将天气信息更新到页面中
-                    weatherInfoElement.innerHTML = `吉吉国天气 ${weather}<img src="http://openweathermap.org/img/wn/${weatherIcon}.png" alt="${weather}">`;
+                    weatherInfoElement.innerHTML = `吉吉国天气 ${weather}<img src="https://openweathermap.org/img/wn/${weatherIcon}.png" alt="${weather}">`;
                 })
                 .catch(error => {
                     console.error('爆了', error);
