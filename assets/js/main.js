@@ -57,6 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
         img.src = imgUrl + "?1";
         const audio = new Audio();
         audio.src = "assets/media/FlowerDance.mp3";
+        audioLoaded = false;
+        imgLoaded = false;
 
         function checkAndPlay() {
             if (imgLoaded && audioLoaded) {
