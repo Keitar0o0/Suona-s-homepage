@@ -52,37 +52,40 @@ document.addEventListener('DOMContentLoaded', function () {
     panel.style.backgroundSize = "cover";
 
     // 定义播放的函数
-    function unmuteAudio() {
+    async function unmuteAudio() {
         const img = new Image();
         img.src = imgUrl + "?1";
         const audio = new Audio();
         audio.src = "assets/media/FlowerDance.mp3";
-        audioLoaded = false;
-        imgLoaded = false;
-
-        function checkAndPlay() {
-            if (imgLoaded && audioLoaded) {
-                panel.style.background = `url('${img.src}') center center no-repeat #666`;
-                panel.style.backgroundSize = "cover";
-                audio.play();
-            }
+    
+        // 创建 Promise 以等待图片加载完成
+        const imgLoadPromise = new Promise((resolve, reject) => {
+            img.onload = () => resolve();
+            img.onerror = () => reject(new Error("Image failed to load"));
+        });
+    
+        // 创建 Promise 以等待音频加载完成
+        const audioLoadPromise = new Promise((resolve, reject) => {
+            audio.oncanplaythrough = () => resolve();
+            audio.onerror = () => reject(new Error("Audio failed to load"));
+        });
+    
+        try {
+            // 等待图片和音频都加载完成
+            await Promise.all([imgLoadPromise, audioLoadPromise]);
+    
+            // 更新背景并播放音频
+            panel.style.background = `url('${img.src}') center center no-repeat #666`;
+            panel.style.backgroundSize = "cover";
+            audio.play();
+        } catch (error) {
+            console.error(error.message);
         }
-
-        // 设置音频加载完成后的处理
-        audio.oncanplaythrough = function () {
-            audioLoaded = true;
-            checkAndPlay();
-        };
-
-        img.onload = function () {
-            imgLoaded = true;
-            checkAndPlay();
-        };
-
+    
         // 移除事件监听器，以防止重复触发
         window.removeEventListener('click', unmuteAudio);
         window.removeEventListener('keydown', unmuteAudio);
-    }
+    }    
 
     // 添加事件监听器
     window.addEventListener('click', unmuteAudio);
