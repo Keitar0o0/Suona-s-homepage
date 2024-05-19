@@ -42,9 +42,9 @@ var iUp = (function () {
 document.addEventListener('DOMContentLoaded', function () {
     // 设置背景图片
     var panel = document.querySelector('#panel');
-    var url;url = "FlowerDance.gif";
+    var url = "assets/media/FlowerDance.gif";
 
-    panel.style.background = "url('" + url + "') center center no-repeat #666";
+    panel.style.background = `url('${url}') center center no-repeat #666`;
     panel.style.backgroundSize = "cover";
 
 
@@ -53,13 +53,13 @@ document.addEventListener('DOMContentLoaded', function () {
 const audio = document.getElementById('background-audio');
 
 
-// 定义取消静音的函数
+// 定义播放的函数
 function unmuteAudio() {
-    audio.play();
     var panel = document.querySelector('#panel');
-    var url;url = "FlowerDance.gif";
-    panel.style.background = "url('" + url + "') center center no-repeat #666 pause";
+    var url  = "assets/media/FlowerDance.gif?1";
+    panel.style.background = `url('${url}') center center no-repeat #666`;
     panel.style.backgroundSize = "cover";
+    audio.play();
     // 移除事件监听器，以防止重复触发
     window.removeEventListener('click', unmuteAudio);
     window.removeEventListener('keydown', unmuteAudio);
@@ -95,7 +95,7 @@ xhr.onreadystatechange = function () {
         document.getElementById('description').innerHTML = randomQuote;
     }
 };
-xhr.open("GET", "shengjing.json", true);
+xhr.open("GET", "assets/json/shengjing.json", true);
 xhr.send();
 
 
