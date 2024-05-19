@@ -42,7 +42,7 @@ var iUp = (function () {
 document.addEventListener('DOMContentLoaded', function () {
     // 设置背景图片
     var panel = document.querySelector('#panel');
-    var url = "assets/media/FlowerDance.gif";
+    var url = "assets/media/FlowerDance.mp4";
 
     panel.style.background = `url('${url}') center center no-repeat #666`;
     panel.style.backgroundSize = "cover";
