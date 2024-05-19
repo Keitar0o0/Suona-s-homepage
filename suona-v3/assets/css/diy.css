@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+#date-time {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 10px;
+    color: #bbb;
+    z-index: 9999; /* 设置堆叠顺序，使其在其他元素之上 */
+}
+#weather-info {
+    position: absolute;
+    bottom: 150px;
+    font-size: 15px;
+    color: #bbb;
+    text-align: center;
+    z-index: 9999; /* 设置堆叠顺序，使其在其他元素之上 */
+}
+.bilibili-text {
+    font-size: 20px; /* 设置文字大小 */
+    color: rgb(255, 255, 255); /* 设置文字颜色 */
+    font-weight: bold; /* 设置文字加粗 */
+}
+.Email-text {
+    font-size: 20px; /* 设置文字大小 */
+    color: rgb(255, 255, 255); /* 设置文字颜色 */
+    font-weight: bold; /* 设置文字加粗 */
+}

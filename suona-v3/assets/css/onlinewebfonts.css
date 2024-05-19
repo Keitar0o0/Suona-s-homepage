@@ -1,0 +1,11 @@
+@font-face{
+    font-family: "ProggySquareTT";
+    src: url("../fonts/5423e3f6b569eee8bb7179f1319240ea.eot");
+    src: url("../fonts/5423e3f6b569eee8bb7179f1319240ea.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/5423e3f6b569eee8bb7179f1319240ea.woff")format("woff"),
+        url("../fonts/5423e3f6b569eee8bb7179f1319240ea.woff2")format("woff2"),
+        url("../fonts/5423e3f6b569eee8bb7179f1319240ea.ttf")format("truetype"),
+        url("../fonts/5423e3f6b569eee8bb7179f1319240ea.svg#ProggySquareTT")format("svg");
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;}
