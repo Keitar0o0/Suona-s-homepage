@@ -42,10 +42,6 @@ var iUp = (function () {
 document.addEventListener('DOMContentLoaded', function () {
     // 设置背景图片
     var panel = document.querySelector('#panel');
-    var screenWidth = window.innerWidth;
-    var screenHeight = window.innerHeight;
-    var screenRatio = screenWidth / screenHeight;
-
     var url;url = "FlowerDance.gif";
 
     panel.style.background = "url('" + url + "') center center no-repeat #666";
@@ -56,14 +52,14 @@ document.addEventListener('DOMContentLoaded', function () {
 // 获取音频元素
 const audio = document.getElementById('background-audio');
 
-// 页面加载时，自动播放音频
-window.addEventListener('load', () => {
-    audio.play();
-});
 
 // 定义取消静音的函数
 function unmuteAudio() {
-    audio.muted = false;
+    audio.play();
+    var panel = document.querySelector('#panel');
+    var url;url = "FlowerDance.gif";
+    panel.style.background = "url('" + url + "') center center no-repeat #666 pause";
+    panel.style.backgroundSize = "cover";
     // 移除事件监听器，以防止重复触发
     window.removeEventListener('click', unmuteAudio);
     window.removeEventListener('keydown', unmuteAudio);
