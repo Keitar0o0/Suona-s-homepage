@@ -44,19 +44,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const panel = document.querySelector('#panel');
     const musicHint = document.getElementById('musicHint');
 
-    // 预加载背景图片
+    // 预加载背景图片与音频
     const imgUrl = "assets/media/FlowerDance.gif";
+    const audioUrl = "assets/media/FlowerDance.mp3"
     const img = new Image();
     img.src = imgUrl;
     panel.style.background = `url('${img.src}') center center no-repeat #666`;
     panel.style.backgroundSize = "cover";
+    img.src = imgUrl + "?1";
+    const audio = new Audio();
+    audio.src = audioUrl;
 
     // 定义播放的函数
     async function unmuteAudio() {
         const img = new Image();
         img.src = imgUrl + "?1";
         const audio = new Audio();
-        audio.src = "assets/media/FlowerDance.mp3";
+        audio.src = audioUrl;;
     
         // 创建 Promise 以等待图片加载完成
         const imgLoadPromise = new Promise((resolve, reject) => {
