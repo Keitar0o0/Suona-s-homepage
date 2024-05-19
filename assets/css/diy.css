@@ -33,3 +33,6 @@ body {
     color: rgb(255, 255, 255); /* 设置文字颜色 */
     font-weight: bold; /* 设置文字加粗 */
 }
+#panel {
+    transition: background 0.5s ease-in-out;
+}
